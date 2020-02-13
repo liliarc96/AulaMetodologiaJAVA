@@ -32,7 +32,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         campo1 = new javax.swing.JTextField();
         campo2 = new javax.swing.JTextField();
-        compo3 = new javax.swing.JTextField();
+        campo3 = new javax.swing.JTextField();
         botaoSomar = new javax.swing.JButton();
         botaoLimpar = new javax.swing.JButton();
         botaoSair = new javax.swing.JButton();
@@ -45,7 +45,7 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel2.setText("Segundo Número:");
 
-        jLabel3.setText("Terceiro Número:");
+        jLabel3.setText("Resultado:");
 
         campo1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -53,9 +53,22 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        campo3.setEditable(false);
+        campo3.setEnabled(false);
+
         botaoSomar.setText("SOMAR");
+        botaoSomar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoSomarActionPerformed(evt);
+            }
+        });
 
         botaoLimpar.setText("LIMPAR");
+        botaoLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoLimparActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -71,7 +84,7 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(jLabel1))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(compo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(campo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(campo2, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(campo1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -82,7 +95,7 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(28, Short.MAX_VALUE))
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {campo1, campo2, compo3});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {campo1, campo2, campo3});
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {botaoLimpar, botaoSomar});
 
@@ -100,7 +113,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(compo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(campo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoSomar)
@@ -149,6 +162,23 @@ public class Principal extends javax.swing.JFrame {
         System.exit(0); //Programa encerrado com sucesso
     }//GEN-LAST:event_botaoSairActionPerformed
 
+    private void botaoLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLimparActionPerformed
+        campo1.setText("");
+        campo2.setText("");
+        campo3.setText("");
+    }//GEN-LAST:event_botaoLimparActionPerformed
+
+    private void botaoSomarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSomarActionPerformed
+        double num1, num2, resultado;
+        
+        num1 = Double.parseDouble(campo1.getText());
+        num2 = Double.parseDouble(campo2.getText());
+        
+        resultado = num1 + num2;
+        
+        campo3.setText(resultado + "");
+    }//GEN-LAST:event_botaoSomarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -190,7 +220,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton botaoSomar;
     private javax.swing.JTextField campo1;
     private javax.swing.JTextField campo2;
-    private javax.swing.JTextField compo3;
+    private javax.swing.JTextField campo3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

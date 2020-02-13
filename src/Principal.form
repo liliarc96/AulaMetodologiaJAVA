@@ -72,7 +72,7 @@
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="2" attributes="0">
-                              <Component id="compo3" linkSize="1" alignment="2" min="-2" max="-2" attributes="0"/>
+                              <Component id="campo3" linkSize="1" alignment="2" min="-2" max="-2" attributes="0"/>
                               <Component id="campo2" linkSize="1" alignment="2" min="-2" pref="157" max="-2" attributes="0"/>
                               <Component id="campo1" linkSize="1" alignment="2" min="-2" pref="142" max="-2" attributes="0"/>
                           </Group>
@@ -104,7 +104,7 @@
                   <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="compo3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="campo3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="44" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -129,7 +129,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Terceiro N&#xfa;mero:"/>
+            <Property name="text" type="java.lang.String" value="Resultado:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="campo1">
@@ -139,17 +139,27 @@
         </Component>
         <Component class="javax.swing.JTextField" name="campo2">
         </Component>
-        <Component class="javax.swing.JTextField" name="compo3">
+        <Component class="javax.swing.JTextField" name="campo3">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="botaoSomar">
           <Properties>
             <Property name="text" type="java.lang.String" value="SOMAR"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoSomarActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="botaoLimpar">
           <Properties>
             <Property name="text" type="java.lang.String" value="LIMPAR"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoLimparActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
